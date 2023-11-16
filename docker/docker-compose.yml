@@ -1,6 +1,6 @@
 version: '3.6'
 services:
-  mytest:
+  mytest2:
     build:
       dockerfile: Dockerfile
       context: ./
