@@ -14,7 +14,7 @@ pipeline {
         }
         stage('通过maven 构建项目') {
             steps {
-                echo 'sh '/var/jenkins_home/maven/bin/mvn clean package -DskipTests''
+                sh '/var/jenkins_home/maven/bin/mvn clean package -DskipTests'
             }
         }
         stage('通过SonarQube做代码质量监测') {
