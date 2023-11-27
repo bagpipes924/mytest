@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('拉取git仓库代码') {
             steps {
-                echo '拉取git仓库代码 --SUCCESS'
+                checkout scmGit(branches: [[name: '${tag}']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/bagpipes924/mytest.git']])
             }
         }
         stage('通过maven 构建项目') {
