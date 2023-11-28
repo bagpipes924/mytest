@@ -24,7 +24,8 @@ pipeline {
         }
         stage('通过Docker 制作自定义镜像') {
             steps {
-                echo '通过Docker 制作自定义镜像 --SUCCESS'
+                sh '''cp target/*.jar docker/
+                docker build -t ${JOB_NAME}:${tag} ./docker/'''
             }
         }
         stage('将自定义镜像推送到Harbor') {
